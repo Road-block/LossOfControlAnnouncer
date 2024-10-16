@@ -1,0 +1,28 @@
+## Interface: 30400
+## Version: 1.1.0
+## Title: Loss of Control Announcer
+## Notes: Announces when the player loses control of their character
+## SavedVariables: LossOfControlAnnouncerDB
+## OptionalDeps: Ace3
+## X-Embeds: Ace3
+
+# Embedded Libraries
+embeds.xml
+
+# Locales
+locales\locales.xml
+
+# AddOn Setup
+addon.lua
+
+# Libraries
+lib\utils\utils.xml
+lib\commands.lua
+lib\config.lua
+
+# Core Features
+player_control.lua
+
+# Initialization
+settings.lua
+init.lua
