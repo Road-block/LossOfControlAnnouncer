@@ -1,4 +1,4 @@
-## Interface: 40402
+## Interface: 50500
 ## Version: 1.1.2
 ## Title: Loss of Control Announcer
 ## Notes: Announces when the player loses control of their character

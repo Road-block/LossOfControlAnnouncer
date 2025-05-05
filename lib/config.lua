@@ -180,8 +180,9 @@ function ns.config.replace_values_table(root, key, new_values_table)
 end
 
 function ns.config.show_options()
-  -- Call InterfaceOptionsFrame_OpenToCategory twice to work around a bug:
-  -- https://www.wowinterface.com/forums/showthread.php?t=54599
-  InterfaceOptionsFrame_OpenToCategory(_options_panel)
-  InterfaceOptionsFrame_OpenToCategory(_options_panel)
+  if ns.AceConfigDialog.OpenFrames[ns.addon.name] then
+    ns.AceConfigDialog:Close(ns.addon.name)
+  else
+    ns.AceConfigDialog:Open(ns.addon.name)
+  end
 end
