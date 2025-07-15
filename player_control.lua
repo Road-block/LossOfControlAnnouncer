@@ -24,7 +24,7 @@ local function _get_situation_settings()
     return settings.battleground
   elseif instance_type == 'raid' then
     return settings.raid
-  elseif instance_type == 'party' then
+  elseif instance_type == 'party' or instance_type == 'scenario' then
     return settings.dungeon
   else
     if IsInRaid() then
@@ -121,7 +121,14 @@ local function _announce(situation_settings, loc_data)
       ns.player_control.ANNOUNCE_CHANNEL_PRINT then
     ns.print(message)
   else
-    SendChatMessage(message, situation_settings.announce_channel)
+    local channel = situation_settings.announce_channel
+    if channel == ns.player_control.ANNOUNCE_CHANNEL_PARTY
+    or channel == ns.player_control.ANNOUNCE_CHANNEL_RAID then
+      if IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then
+        channel = ns.player_control.ANNOUNCE_CHANNEL_BATTLEGROUND
+      end
+    end
+    SendChatMessage(message, channel)
   end
 end
 

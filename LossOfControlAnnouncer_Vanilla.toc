@@ -1,5 +1,5 @@
 ## Interface: 11507
-## Version: 1.1.2
+## Version: 1.1.3
 ## Title: Loss of Control Announcer
 ## Notes: Announces when the player loses control of their character
 ## SavedVariables: LossOfControlAnnouncerDB
